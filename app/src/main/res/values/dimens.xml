@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Spacing -->
+    <dimen name="spacing_sm_0">4dp</dimen>
+    <dimen name="spacing_sm_1">8dp</dimen>
+    <dimen name="spacing_sm_1_5">12dp</dimen>
+    <dimen name="spacing_sm_2">16dp</dimen>
+    <dimen name="spacing_sm_3">24dp</dimen>
+    <dimen name="spacing_sm_4">32dp</dimen>
+    <dimen name="spacing_sm_5">36dp</dimen>
+    <dimen name="spacing_md_1">40dp</dimen>
+    <dimen name="spacing_md_2">48dp</dimen>
+    <dimen name="spacing_md_3">56dp</dimen>
+    <dimen name="spacing_md_4">64dp</dimen>
+    <dimen name="spacing_lg_1">72dp</dimen>
+    <dimen name="spacing_lg_2">80dp</dimen>
+    <dimen name="spacing_lg_3">88dp</dimen>
+    <dimen name="spacing_lg_4">96dp</dimen>
+    <dimen name="spacing_lg_5">144dp</dimen>
+    <dimen name="spacing_lg_6">160dp</dimen>
+    <dimen name="spacing_lg_7">168dp</dimen>
+    <dimen name="spacing_lg_8">176dp</dimen>
+
+    <!-- Spacing Negative-->
+    <dimen name="spacing_negative_sm_0">-4dp</dimen>
+    <dimen name="spacing_negative_sm_1">-8dp</dimen>
+    <dimen name="spacing_negative_sm_2">-16dp</dimen>
+    <dimen name="spacing_negative_md_4">-64dp</dimen>
+    <dimen name="spacing_negative_lg_4">-96dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_none">0dp</dimen>
+    <dimen name="elevation_sm_1">2dp</dimen>
+    <dimen name="elevation_sm_2">4dp</dimen>
+    <dimen name="elevation_sm_3">6dp</dimen>
+    <dimen name="elevation_md_1">8dp</dimen>
+    <dimen name="elevation_md_2">12dp</dimen>
+    <dimen name="elevation_md_3">16dp</dimen>
+    <dimen name="elevation_lg_1">20dp</dimen>
+    <dimen name="elevation_lg_2">24dp</dimen>
+    <dimen name="elevation_lg_3">28dp</dimen>
+
+    <!-- Boarder -->
+    <dimen name="border_s">1dp</dimen>
+    <dimen name="border_m">2dp</dimen>
+
+    <!-- Radius -->
+    <dimen name="radius_s">4dp</dimen>
+    <dimen name="radius_m">8dp</dimen>
+    <dimen name="radius_l">16dp</dimen>
+    <dimen name="radius_l1">20dp</dimen>
+    <dimen name="radius_l2">24dp</dimen>
+
+    <dimen name="appbar_elevation">@dimen/elevation_sm_2</dimen>
+    <dimen name="profile_image_default_stroke">8dp</dimen>
+</resources>
