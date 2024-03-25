@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/detailsFragment">
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.birthdayapp.sample.view.DetailsFragment"
+        android:label="Details Fragment" />
+
+    <fragment
+        android:id="@+id/birthdayFragment"
+        android:name="com.birthdayapp.sample.view.BirthdayFragment"
+        android:label="Birthday Fragment">
+
+        <argument
+            android:name="previewType"
+            android:defaultValue="BLUE"
+            app:nullable="false"
+            app:argType="com.birthdayapp.sample.data.model.PreviewType"
+            />
+    </fragment>
+
+    <dialog
+        android:id="@+id/imagePickerFragment"
+        android:name="com.birthdayapp.sample.view.ImagePickerFragment"
+        android:label="Image Picker Fragment" />
+</navigation>
