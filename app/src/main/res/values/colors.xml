@@ -3,8 +3,11 @@
     <color name="blue_primary">#8BD3E4</color>
     <color name="yellow_primary">#FEBE21</color>
     <color name="green_primary">#6FC5AF</color>
+    <color name="red_primary">#EF7B7B</color>
 
     <color name="blue_bg">#DAF1F6</color>
     <color name="yellow_bg">#feefcb</color>
     <color name="green_bg">#c5e8df</color>
+
+    <color name="text_color">#394562</color>
 </resources>
