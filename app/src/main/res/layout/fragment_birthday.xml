@@ -16,6 +16,7 @@
 
         <TextView
             android:id="@+id/title"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_sm_2_5"
@@ -61,9 +62,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintBottom_toTopOf="@id/subtitle"
             app:layout_constraintEnd_toStartOf="@id/swirlRightImage"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/ageDigit1"
             app:layout_constraintTop_toBottomOf="@id/title"
             tools:ignore="ContentDescription"
@@ -91,6 +92,7 @@
             android:layout_marginBottom="15dp"
             android:gravity="center_horizontal"
             android:textAllCaps="true"
+            android:textColor="@color/text_color"
             app:layout_constraintBottom_toTopOf="@+id/profileImage"
             app:layout_constraintEnd_toEndOf="@id/barrierEnd"
             app:layout_constraintHorizontal_bias="0.5"
@@ -165,12 +167,11 @@
             android:id="@+id/loadingView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:visibility="gone"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrierStart"

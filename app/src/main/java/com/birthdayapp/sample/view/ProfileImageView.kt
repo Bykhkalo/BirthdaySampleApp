@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.ViewTreeObserver
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.birthdayapp.sample.R
 import com.birthdayapp.sample.databinding.ViewProfileImageBinding
 import com.birthdayapp.sample.data.model.PreviewType
@@ -32,6 +33,13 @@ class ProfileImageView(context: Context, attributes: AttributeSet) :
         set(value) {
             field = value
             onPreviewTypeChanged(value)
+        }
+
+    var isCameraButtonVisible: Boolean = binding.cameraButton.isVisible
+        get() = binding.cameraButton.isVisible
+        set(value) {
+            field = value
+            binding.cameraButton.isVisible = value
         }
 
     private val errorDrawable: Drawable?

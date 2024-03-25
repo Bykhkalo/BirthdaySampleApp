@@ -9,6 +9,7 @@
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="photo_file_name_prefix">sample_picture_%1$s</string>
+    <string name="intent_chooser_text">Please select</string>
 
     <string name="error_image_not_picked">No image has been picked</string>
     <string name="error_profile_loading">Loading error</string>

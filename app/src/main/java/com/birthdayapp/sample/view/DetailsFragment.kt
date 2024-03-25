@@ -82,7 +82,8 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         val formattedDate: String? = viewModel.getFormattedBirthDate(profile.birthDate)
 
         if (nameEditText.text.toString() != name) {
-            nameEditText.setTextKeepState(name)
+            nameEditText.setText(name)
+            nameEditText.setSelection(name.length)
         }
 
         dateEditText.setText(formattedDate)

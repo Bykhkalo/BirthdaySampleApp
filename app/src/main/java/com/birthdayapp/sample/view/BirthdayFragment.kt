@@ -1,5 +1,6 @@
 package com.birthdayapp.sample.view
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -11,6 +12,8 @@ import androidx.navigation.fragment.navArgs
 import com.birthdayapp.sample.R
 import com.birthdayapp.sample.core.extensions.lifecycle.autoCleared
 import com.birthdayapp.sample.core.extensions.observe
+import com.birthdayapp.sample.core.extensions.shareImageResource
+import com.birthdayapp.sample.core.extensions.takeScreenshot
 import com.birthdayapp.sample.core.utils.DateUtils
 import com.birthdayapp.sample.core.utils.DateUtils.MONTHS_IN_ONE_YEAR
 import com.birthdayapp.sample.data.model.PreviewType
@@ -49,6 +52,11 @@ class BirthdayFragment: Fragment(R.layout.fragment_birthday) {
 
         arrowBackImage.setOnClickListener {
             navigation.back()
+        }
+        shareButton.setOnClickListener {
+            val screenshotBitmap = makeScreenshot()
+            val uri = viewModel.saveScreenshot(screenshotBitmap)
+            requireView().shareImageResource(uri)
         }
     }
 
@@ -171,5 +179,18 @@ class BirthdayFragment: Fragment(R.layout.fragment_birthday) {
                 navigation.imagePickerDialog()
             }
         }
+    }
+
+    private fun setIsShareFeatureIgnoredViewsVisible(isVisible: Boolean) = with(binding) {
+        shareButton.isVisible = isVisible
+        arrowBackImage.isVisible = isVisible
+        profileImage.isCameraButtonVisible = isVisible
+    }
+
+    private fun makeScreenshot(): Bitmap {
+        setIsShareFeatureIgnoredViewsVisible(false)
+        val bitmap = binding.root.takeScreenshot()
+        setIsShareFeatureIgnoredViewsVisible(true)
+        return bitmap
     }
 }
