@@ -6,6 +6,7 @@ import com.birthdayapp.sample.data.repository.ProfileRepository
 import com.birthdayapp.sample.data.repository.ProfileRepositoryImpl
 import com.birthdayapp.sample.viewmodel.DetailsViewModel
 import com.birthdayapp.sample.viewmodel.ImagePickerViewModel
+import com.birthdayapp.sample.viewmodel.BirthdayViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
@@ -14,6 +15,7 @@ val mainModule = module {
 
     viewModelOf(::DetailsViewModel)
     viewModelOf(::ImagePickerViewModel)
+    viewModelOf(::BirthdayViewModel)
 
     factory { ProfilePreferences(androidContext()) }
     factory<ProfileRepository> { ProfileRepositoryImpl(get()) }

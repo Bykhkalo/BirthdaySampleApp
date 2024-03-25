@@ -6,6 +6,7 @@ import android.os.Looper
 import android.text.InputType
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
@@ -38,15 +39,16 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     }
 
     private fun setupViews() = with(binding) {
+        setupStatusAndNavigationBar()
         setupNameEdit()
         setupDatePicker()
 
-        binding.profileImage.setOnCameraClickListener {
+        profileImage.setOnCameraClickListener {
             navigation.imagePickerDialog()
         }
 
         birthdayButton.setOnClickListener {
-            TODO("Navigate to next screen")
+            navigation.birthdayOverview()
         }
     }
 
@@ -80,7 +82,8 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         val formattedDate: String? = viewModel.getFormattedBirthDate(profile.birthDate)
 
         if (nameEditText.text.toString() != name) {
-            nameEditText.setTextKeepState(name)
+            nameEditText.setText(name)
+            nameEditText.setSelection(name.length)
         }
 
         dateEditText.setText(formattedDate)
@@ -103,6 +106,14 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             resources.getString(R.string.error_profile_loading),
             Toast.LENGTH_LONG
         ).show()
+    }
+
+    private fun setupStatusAndNavigationBar() {
+        requireActivity().window.apply {
+            val color = ContextCompat.getColor(requireContext(), R.color.blue_primary)
+            statusBarColor = color
+            navigationBarColor = color
+        }
     }
 
     private fun setupNameEdit() = with(binding) {
