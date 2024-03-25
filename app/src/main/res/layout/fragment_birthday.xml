@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:background="@color/blue_bg"
+    tools:ignore="ContentDescription">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm_2_5"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:textAllCaps="true"
+            android:textColor="@color/text_color"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@+id/ageDigit2"
+            app:layout_constraintEnd_toEndOf="@id/barrierEnd"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/barrierStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="TODAY CRISTIANO RONALDO IS" />
+
+        <ImageView
+            android:id="@+id/swirlLeftImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:src="@drawable/ic_left_swirls"
+            app:layout_constraintBottom_toTopOf="@id/ageDigit1"
+            app:layout_constraintEnd_toStartOf="@id/ageDigit1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/barrierStart"
+            app:layout_constraintTop_toBottomOf="@id/ageDigit1"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ageDigit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/ageDigit2"
+            app:layout_constraintEnd_toStartOf="@id/ageDigit2"
+            app:layout_constraintStart_toEndOf="@id/swirlLeftImage"
+            app:layout_constraintTop_toTopOf="@id/ageDigit2"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_eight" />
+
+        <ImageView
+            android:id="@+id/ageDigit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@id/subtitle"
+            app:layout_constraintEnd_toStartOf="@id/swirlRightImage"
+            app:layout_constraintStart_toEndOf="@id/ageDigit1"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_zero"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/swirlRightImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:src="@drawable/ic_right_swirls"
+            app:layout_constraintBottom_toBottomOf="@id/ageDigit2"
+            app:layout_constraintEnd_toStartOf="@id/barrierEnd"
+            app:layout_constraintStart_toEndOf="@id/ageDigit2"
+            app:layout_constraintTop_toTopOf="@id/ageDigit2"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_horizontal"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@+id/profileImage"
+            app:layout_constraintEnd_toEndOf="@id/barrierEnd"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/barrierStart"
+            app:layout_constraintTop_toBottomOf="@+id/ageDigit2"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="months old!" />
+
+        <com.birthdayapp.sample.view.ProfileImageView
+            android:id="@+id/profileImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/nanitLogo"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/bg_blue" />
+
+        <ImageView
+            android:id="@+id/nanitLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="53dp"
+            app:layout_constraintBottom_toTopOf="@+id/shareButton"
+            app:layout_constraintEnd_toEndOf="@id/barrierEnd"
+            app:layout_constraintStart_toStartOf="@id/barrierStart"
+            app:srcCompat="@drawable/logo_nanit" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/shareButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="53dp"
+            android:text="@string/share_the_news"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:backgroundTint="@color/red_primary"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/ic_share"
+            app:iconGravity="end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_max="400dp" />
+
+        <ImageView
+            android:id="@+id/arrowBackImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_sm_2"
+            android:layout_marginTop="@dimen/spacing_sm_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <ProgressBar
+            android:id="@+id/loadingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="profileImage" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="profileImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

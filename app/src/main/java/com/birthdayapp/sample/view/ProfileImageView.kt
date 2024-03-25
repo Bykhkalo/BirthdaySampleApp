@@ -20,13 +20,18 @@ class ProfileImageView(context: Context, attributes: AttributeSet) :
     private var binding: ViewProfileImageBinding =
         ViewProfileImageBinding.inflate(LayoutInflater.from(context), this)
 
-    private var previewType: PreviewType = PreviewType.BLUE
     private var onCameraButtonClick: (() -> Unit)? = null
 
     var filePath: String = ""
         set(value) {
             field = value
             loadImageFrom(value)
+        }
+
+    var previewType: PreviewType = PreviewType.BLUE
+        set(value) {
+            field = value
+            onPreviewTypeChanged(value)
         }
 
     private val errorDrawable: Drawable?
@@ -41,7 +46,7 @@ class ProfileImageView(context: Context, attributes: AttributeSet) :
         }
 
     init {
-        setPreviewType(previewType)
+        onPreviewTypeChanged(previewType)
 
         val stroke = resources.getDimension(R.dimen.profile_image_default_stroke).toInt()
 
@@ -72,11 +77,11 @@ class ProfileImageView(context: Context, attributes: AttributeSet) :
         val file = File(filePath)
         Glide.with(this)
             .load(file)
+            .error(errorDrawable)
             .into(this)
-            .onLoadFailed(errorDrawable)
     }
 
-    fun setPreviewType(previewType: PreviewType) {
+    private fun onPreviewTypeChanged(previewType: PreviewType) {
         when (previewType) {
             PreviewType.YELLOW -> {
                 binding.apply {
