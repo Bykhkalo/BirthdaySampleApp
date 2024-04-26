@@ -36,3 +36,6 @@ Users should be able to share the screen:
 - Pushing the button will open the share menu.
 - The shared image should not include the share button, the camera icon or
 the close button.
+
+
+![Screenshot 2024-04-26 152335](https://github.com/Bykhkalo/BirthdaySampleApp/assets/68943081/0841b2ad-7d9b-494c-acec-dec51a61bfff)
